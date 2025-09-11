@@ -112,7 +112,7 @@ this.getDataBreakup();
   getDataBreakup() {
     this.spinner.show();
     this.http
-      .get(`${environment.apiUrl}/api/BillingPayments/BillBreakUpbyId/` + this.queryParems.contractId+'/'+this.billName)
+      .get(`${environment.apiUrl}/api/BillingPayments/BillBreakUpbyId/` + this.queryParems.contractId+'/'+this.queryParems.billNumber +'/'+this.billName)
       .subscribe(res => {
         this.response = res;
 
