@@ -98,12 +98,15 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-row" *ngIf="loggedInDepartmentName =='Yarn Local' || loggedInDepartmentName =='Yarn Export' || loggedInDepartmentName =='Yarn Export Bangladesh'">
+                            <div class="form-row"
+                                *ngIf="loggedInDepartmentName =='Yarn Local' || loggedInDepartmentName =='Yarn Export' || loggedInDepartmentName =='Yarn Export Bangladesh'">
 
-                                <label class="col-md-2 col-form-label control-label" for="inputEmail4">Alocation:</label>
+                                <label class="col-md-2 col-form-label control-label"
+                                    for="inputEmail4">Alocation:</label>
                                 <div class="form-group col-md-1 text-right">
                                     <div class="text-right">
-                                    <input type="checkbox" class="my-checkbox col-md-3"  [(ngModel)]="data.alocation" id="checkbox" />
+                                        <input type="checkbox" class="my-checkbox col-md-3" [(ngModel)]="data.alocation"
+                                            id="checkbox" />
                                     </div>
 
                                 </div>
@@ -111,11 +114,9 @@
                                 <label for="inputEmail3" class="col-md-1 col-form-label control-label">Block#</label>
                                 <div class="col-md-7">
                                     <div class="input-group">
-                                        <ng-select name="blockId" #blockId="ngModel"
-                                            class="col-md-3 px-0" [(ngModel)]="data.blockId"
-                                            placeholder="-- Select --"
-                                            [ngClass]="{'error': blockId.invalid && blockId.touched,'not-error': blockId.valid && blockId.touched}"
-                                            >
+                                        <ng-select name="blockId" #blockId="ngModel" class="col-md-3 px-0"
+                                            [(ngModel)]="data.blockId" placeholder="-- Select --"
+                                            [ngClass]="{'error': blockId.invalid && blockId.touched,'not-error': blockId.valid && blockId.touched}">
                                             <ng-option *ngFor="let i of block" [value]="i.id">{{ i.autoBlockNumber }}
                                             </ng-option>
                                         </ng-select>
@@ -226,13 +227,14 @@
 
                                 <div class="form-group row" *ngIf="loggedInDepartmentName=='Yarn Export'">
                                     <label for="inputEmail3" class="col-md-3 col-form-label control-label">L/C Open by
-                                        </label>
+                                    </label>
                                     <div class="col-md-7">
-                                        <ng-select name="buyerIdLCOpen"  placeholder="-- Select --" [(ngModel)]=" data.buyerIdLCOpen">
+                                        <ng-select name="buyerIdLCOpen" placeholder="-- Select --"
+                                            [(ngModel)]=" data.buyerIdLCOpen">
                                             <ng-option *ngFor="let i of buyer" [value]="i.id">
-                                              {{i.buyerName}}
+                                                {{i.buyerName}}
                                             </ng-option>
-                                          </ng-select>
+                                        </ng-select>
                                     </div>
                                 </div>
 
@@ -259,7 +261,8 @@
 
                         <hr>
 
-                        <div class="card shadow mb-4" *ngIf="loggedInDepartmentName == 'Yarn Export'  || loggedInDepartmentName == 'Yarn Export Bangladesh'
+                        <div class="card shadow mb-4"
+                            *ngIf="loggedInDepartmentName == 'Yarn Export'  || loggedInDepartmentName == 'Yarn Export Bangladesh'
                     || loggedInDepartmentName == 'Yarn Import' || loggedInDepartmentName == 'Comber noil' || loggedInDepartmentName=='Synthetic Fibers'">
                             <div class="card-body">
 
@@ -399,7 +402,8 @@
 
 
 
-                                <div class="form-group row" *ngIf="loggedInDepartmentName!='Yarn Export' && loggedInDepartmentName != 'Yarn Export Bangladesh'
+                                <div class="form-group row"
+                                    *ngIf="loggedInDepartmentName!='Yarn Export' && loggedInDepartmentName != 'Yarn Export Bangladesh'
                                 && loggedInDepartmentName != 'Yarn Import' && loggedInDepartmentName != 'Comber noil' && loggedInDepartmentName != 'Synthetic Fibers'">
                                     <label for="inputEmail3"
                                         class="col-md-3 col-form-label control-label">Article:</label>
@@ -503,7 +507,8 @@
                                         </div>
                                     </div>
                                 </div> -->
-                                <div *ngIf="loggedInDepartmentName=='Yarn Export' || loggedInDepartmentName == 'Yarn Export Bangladesh'
+                                <div
+                                    *ngIf="loggedInDepartmentName=='Yarn Export' || loggedInDepartmentName == 'Yarn Export Bangladesh'
                                 || loggedInDepartmentName == 'Yarn Import' || loggedInDepartmentName == 'Comber noil' || loggedInDepartmentName == 'Synthetic Fibers'">
                                     <div class="form-group row" *ngFor="let a of Article; let i = index;">
                                         <label for="inputEmail3" class="col-md-2 col-form-label control-label"></label>
@@ -554,7 +559,8 @@
 
                                                     </div>
                                                 </div>
-                                                <div class="col-md-2 mrg-tsm" *ngIf="loggedInDepartmentName !='Yarn Export' && loggedInDepartmentName != 'Yarn Export Bangladesh'">
+                                                <div class="col-md-2 mrg-tsm"
+                                                    *ngIf="loggedInDepartmentName !='Yarn Export' && loggedInDepartmentName != 'Yarn Export Bangladesh'">
                                                     <div class="input-group">
                                                         <input type="number" min="0" placeholder="Age.Comm."
                                                             #contractArticleForignAgentCommission="ngModel"
@@ -565,19 +571,21 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-md-2 mrg-tsm" *ngIf="loggedInDepartmentName=='Yarn Export' || loggedInDepartmentName == 'Yarn Export Bangladesh'">
+                                                <div class="col-md-2 mrg-tsm"
+                                                    *ngIf="loggedInDepartmentName=='Yarn Export' || loggedInDepartmentName == 'Yarn Export Bangladesh'">
                                                     <div class="input-group">
-                                                            <button class="btn btn-outline-primary"
-                                                                                
-                                                                                type="button" (click)="editExternalAgentCommArticleWise('Add',a,'0',i)">
-                                                                                <i class="fas fa-plus fa-xs">AgentC</i></button>
-    
+                                                        <button class="btn btn-outline-primary" type="button"
+                                                            (click)="editExternalAgentCommArticleWise('Add',a,'0',i)">
+                                                            <i class="fas fa-plus fa-xs">AgentC</i></button>
+
                                                     </div>
                                                 </div>
-                                                <div class="col-md-2" *ngIf="loggedInDepartmentName=='Yarn Export' || loggedInDepartmentName == 'Yarn Export Bangladesh'">
-                                                    <label *ngFor="let ag of a.agents; let j = index;" class="" [attr.id]="'contractArticleForignAgentCommission_' + i+j" style=" margin-top: 12px;
+                                                <div class="col-md-2"
+                                                    *ngIf="loggedInDepartmentName=='Yarn Export' || loggedInDepartmentName == 'Yarn Export Bangladesh'">
+                                                    <label *ngFor="let ag of a.agents; let j = index;" class=""
+                                                        [attr.id]="'contractArticleForignAgentCommission_' + i+j" style=" margin-top: 12px;
                                                     font-weight: 500;">{{ag.agentName}} {{ag.agentCommission}}</label>
-                                                    
+
                                                 </div>
 
 
@@ -586,20 +594,22 @@
                                                     <div class="input-group">
 
 
-                                                        <ng-select [(ngModel)]="a.contractArticleCurrencyId" class="col-md-12" placeholder="Select Currency"
-                                                        name="contractArticleCurrencyId_{{i}}">
-                                                        <ng-option *ngFor="let i of currency" [value]="i.id">{{ i.code }}
-                                                        </ng-option>
-                                                    </ng-select>
+                                                        <ng-select [(ngModel)]="a.contractArticleCurrencyId"
+                                                            class="col-md-12" placeholder="Select Currency"
+                                                            name="contractArticleCurrencyId_{{i}}">
+                                                            <ng-option *ngFor="let i of currency" [value]="i.id">{{
+                                                                i.code }}
+                                                            </ng-option>
+                                                        </ng-select>
                                                     </div>
                                                 </div>
 
 
-                                                <div class="col-md-2 mrg-tsm" *ngIf="loggedInDepartmentName=='Yarn Export'">
+                                                <div class="col-md-2 mrg-tsm"
+                                                    *ngIf="loggedInDepartmentName=='Yarn Export'">
                                                     <div class="input-group">
                                                         <input type="number" min="0" placeholder="Container"
-                                                            #contractArticleContainer="ngModel"
-                                                            class="form-control"
+                                                            #contractArticleContainer="ngModel" class="form-control"
                                                             [(ngModel)]="a.contractArticleContainer"
                                                             name="contractArticleContainer_{{i}}">
 
@@ -630,7 +640,8 @@
 
                                 </div>
                                 <br>
-                                <div class="form-group row" *ngIf="loggedInDepartmentName=='Yarn Export' || loggedInDepartmentName == 'Yarn Export Bangladesh'
+                                <div class="form-group row"
+                                    *ngIf="loggedInDepartmentName=='Yarn Export' || loggedInDepartmentName == 'Yarn Export Bangladesh'
                                 || loggedInDepartmentName == 'Yarn Import' || loggedInDepartmentName == 'Comber noil' || loggedInDepartmentName == 'Synthetic Fibers'">
                                     <label for="inputEmail3" class="col-md-2 col-form-label control-label">Brand
                                         Name:</label>
@@ -915,7 +926,8 @@
                         </div>
                         <hr *ngIf="loggedInDepartmentName != 'Yarn Export'  && loggedInDepartmentName != 'Yarn Export Bangladesh'
                     && (loggedInDepartmentName == 'Yarn Import'  || loggedInDepartmentName == 'Synthetic Fibers')">
-                        <div class="card shadow mb-4" *ngIf="loggedInDepartmentName != 'Yarn Export' && loggedInDepartmentName != 'Yarn Export Bangladesh'
+                        <div class="card shadow mb-4"
+                            *ngIf="loggedInDepartmentName != 'Yarn Export' && loggedInDepartmentName != 'Yarn Export Bangladesh'
                     && loggedInDepartmentName != 'Yarn Import' && loggedInDepartmentName != 'Comber noil' && loggedInDepartmentName != 'Synthetic Fibers'">
                             <div class="card-body">
 
@@ -936,7 +948,8 @@
                                                 <div class="input-group">
                                                     <input type="number" min="0" placeholder="quantity"
                                                         #quantity="ngModel" class="form-control"
-                                                        [(ngModel)]="data.quantity" name="quantity" (blur)='checkBlockQuantity($event)'>
+                                                        [(ngModel)]="data.quantity" name="quantity"
+                                                        (blur)='checkBlockQuantity($event)'>
                                                     <div class="input-group-append">
                                                         <span class="input-group-text" id="basic-addon2">per</span>
                                                     </div>
@@ -1207,16 +1220,32 @@
                                     <div class="col-md-2 mrg-tsm">
                                         <ng-select placeholder="Year" name="sellerDeliveryDateYear"
                                             [(ngModel)]="data.sellerDeliveryDateYear" #sellerDeliveryDateYear="ngModel">
-                                            <ng-option value="2016"> 2016</ng-option>
-                                            <ng-option value="2017"> 2017</ng-option>
-                                            <ng-option value="2018"> 2018</ng-option>
-                                            <ng-option value="2019"> 2019</ng-option>
-                                            <ng-option value="2020"> 2020</ng-option>
-                                            <ng-option value="2021"> 2021</ng-option>
-                                            <ng-option value="2022"> 2022</ng-option>
-                                            <ng-option value="2023"> 2023</ng-option>
-                                            <ng-option value="2024"> 2024</ng-option>
-                                            <ng-option value="2025"> 2025</ng-option>
+                                            <ng-option value="2016">2016</ng-option>
+                                            <ng-option value="2017">2017</ng-option>
+                                            <ng-option value="2018">2018</ng-option>
+                                            <ng-option value="2019">2019</ng-option>
+                                            <ng-option value="2020">2020</ng-option>
+                                            <ng-option value="2021">2021</ng-option>
+                                            <ng-option value="2022">2022</ng-option>
+                                            <ng-option value="2023">2023</ng-option>
+                                            <ng-option value="2024">2024</ng-option>
+                                            <ng-option value="2025">2025</ng-option>
+                                            <ng-option value="2026">2026</ng-option>
+                                            <ng-option value="2027">2027</ng-option>
+                                            <ng-option value="2028">2028</ng-option>
+                                            <ng-option value="2029">2029</ng-option>
+                                            <ng-option value="2030">2030</ng-option>
+                                            <ng-option value="2031">2031</ng-option>
+                                            <ng-option value="2032">2032</ng-option>
+                                            <ng-option value="2033">2033</ng-option>
+                                            <ng-option value="2034">2034</ng-option>
+                                            <ng-option value="2035">2035</ng-option>
+                                            <ng-option value="2036">2036</ng-option>
+                                            <ng-option value="2037">2037</ng-option>
+                                            <ng-option value="2038">2038</ng-option>
+                                            <ng-option value="2039">2039</ng-option>
+                                            <ng-option value="2040">2040</ng-option>
+
                                         </ng-select>
                                     </div>
                                 </div>
@@ -1271,7 +1300,8 @@
                                 <div class="row">
                                     <div class="col-md-3"></div>
                                     <div class="col-md-7">
-                                        <button type="button" class="btn btn-outline-primary btn-sm" (click)="addMore()"> Add Another
+                                        <button type="button" class="btn btn-outline-primary btn-sm"
+                                            (click)="addMore()"> Add Another
                                             Delivery Date</button>
                                     </div>
                                 </div>
@@ -1380,7 +1410,8 @@
                                 <div class="row">
                                     <div class="col-md-3"></div>
                                     <div class="col-md-7">
-                                        <button type="button" class="btn btn-outline-primary btn-sm" (click)="add()"> Add Another
+                                        <button type="button" class="btn btn-outline-primary btn-sm" (click)="add()">
+                                            Add Another
                                             Delivery
                                             Date</button>
                                     </div>
@@ -1678,16 +1709,31 @@
                                     <div class="col-md-2 mrg-tsm">
                                         <ng-select placeholder="Year" name="sellerDeliveryDateYear"
                                             [(ngModel)]="data.sellerDeliveryDateYear" #sellerDeliveryDateYear="ngModel">
-                                            <ng-option value="2016"> 2016</ng-option>
-                                            <ng-option value="2017"> 2017</ng-option>
-                                            <ng-option value="2018"> 2018</ng-option>
-                                            <ng-option value="2019"> 2019</ng-option>
-                                            <ng-option value="2020"> 2020</ng-option>
-                                            <ng-option value="2021"> 2021</ng-option>
-                                            <ng-option value="2022"> 2022</ng-option>
-                                            <ng-option value="2023"> 2023</ng-option>
-                                            <ng-option value="2024"> 2024</ng-option>
-                                            <ng-option value="2025"> 2025</ng-option>
+                                            <ng-option value="2016">2016</ng-option>
+                                            <ng-option value="2017">2017</ng-option>
+                                            <ng-option value="2018">2018</ng-option>
+                                            <ng-option value="2019">2019</ng-option>
+                                            <ng-option value="2020">2020</ng-option>
+                                            <ng-option value="2021">2021</ng-option>
+                                            <ng-option value="2022">2022</ng-option>
+                                            <ng-option value="2023">2023</ng-option>
+                                            <ng-option value="2024">2024</ng-option>
+                                            <ng-option value="2025">2025</ng-option>
+                                            <ng-option value="2026">2026</ng-option>
+                                            <ng-option value="2027">2027</ng-option>
+                                            <ng-option value="2028">2028</ng-option>
+                                            <ng-option value="2029">2029</ng-option>
+                                            <ng-option value="2030">2030</ng-option>
+                                            <ng-option value="2031">2031</ng-option>
+                                            <ng-option value="2032">2032</ng-option>
+                                            <ng-option value="2033">2033</ng-option>
+                                            <ng-option value="2034">2034</ng-option>
+                                            <ng-option value="2035">2035</ng-option>
+                                            <ng-option value="2036">2036</ng-option>
+                                            <ng-option value="2037">2037</ng-option>
+                                            <ng-option value="2038">2038</ng-option>
+                                            <ng-option value="2039">2039</ng-option>
+                                            <ng-option value="2040">2040</ng-option>
                                         </ng-select>
                                     </div>
                                 </div>
@@ -1743,7 +1789,8 @@
                                 <div class="row">
                                     <div class="col-md-3"></div>
                                     <div class="col-md-7">
-                                        <a class="btn btn-outline-primary btn-sm" type="button" (click)="addMore()"> Add Another
+                                        <a class="btn btn-outline-primary btn-sm" type="button" (click)="addMore()"> Add
+                                            Another
                                             Delivery Date</a>
                                     </div>
                                 </div>
@@ -1852,7 +1899,8 @@
                                 <div class="row">
                                     <div class="col-md-3"></div>
                                     <div class="col-md-7">
-                                        <a class="btn btn-outline-primary btn-sm" type="button" (click)="add()"> Add Another
+                                        <a class="btn btn-outline-primary btn-sm" type="button" (click)="add()"> Add
+                                            Another
                                             Delivery
                                             Date</a>
                                     </div>
@@ -1885,7 +1933,8 @@
                                     <label for="inputEmail3" class="col-md-3 col-form-label control-label">Payment
                                         Terms:</label>
 
-                                    <div class="col-md-7" *ngIf="loggedInDepartmentName == 'Yarn Export' || loggedInDepartmentName == 'Yarn Export Bangladesh'
+                                    <div class="col-md-7"
+                                        *ngIf="loggedInDepartmentName == 'Yarn Export' || loggedInDepartmentName == 'Yarn Export Bangladesh'
                 || loggedInDepartmentName == 'Yarn Import' || loggedInDepartmentName == 'Comber noil' || loggedInDepartmentName == 'Synthetic Fibers'">
                                         <div class="row">
 
@@ -2131,16 +2180,31 @@
                                     <div class="col-md-2 mrg-tsm">
                                         <ng-select placeholder="Year" name="sellerDeliveryDateYear"
                                             [(ngModel)]="data.sellerDeliveryDateYear" #sellerDeliveryDateYear="ngModel">
-                                            <ng-option value="2016"> 2016</ng-option>
-                                            <ng-option value="2017"> 2017</ng-option>
-                                            <ng-option value="2018"> 2018</ng-option>
-                                            <ng-option value="2019"> 2019</ng-option>
-                                            <ng-option value="2020"> 2020</ng-option>
-                                            <ng-option value="2021"> 2021</ng-option>
-                                            <ng-option value="2022"> 2022</ng-option>
-                                            <ng-option value="2023"> 2023</ng-option>
-                                            <ng-option value="2024"> 2024</ng-option>
-                                            <ng-option value="2025"> 2025</ng-option>
+                                            <ng-option value="2016">2016</ng-option>
+                                            <ng-option value="2017">2017</ng-option>
+                                            <ng-option value="2018">2018</ng-option>
+                                            <ng-option value="2019">2019</ng-option>
+                                            <ng-option value="2020">2020</ng-option>
+                                            <ng-option value="2021">2021</ng-option>
+                                            <ng-option value="2022">2022</ng-option>
+                                            <ng-option value="2023">2023</ng-option>
+                                            <ng-option value="2024">2024</ng-option>
+                                            <ng-option value="2025">2025</ng-option>
+                                            <ng-option value="2026">2026</ng-option>
+                                            <ng-option value="2027">2027</ng-option>
+                                            <ng-option value="2028">2028</ng-option>
+                                            <ng-option value="2029">2029</ng-option>
+                                            <ng-option value="2030">2030</ng-option>
+                                            <ng-option value="2031">2031</ng-option>
+                                            <ng-option value="2032">2032</ng-option>
+                                            <ng-option value="2033">2033</ng-option>
+                                            <ng-option value="2034">2034</ng-option>
+                                            <ng-option value="2035">2035</ng-option>
+                                            <ng-option value="2036">2036</ng-option>
+                                            <ng-option value="2037">2037</ng-option>
+                                            <ng-option value="2038">2038</ng-option>
+                                            <ng-option value="2039">2039</ng-option>
+                                            <ng-option value="2040">2040</ng-option>
                                         </ng-select>
                                     </div>
                                 </div>
@@ -2195,7 +2259,8 @@
                                 <div class="row">
                                     <div class="col-md-3"></div>
                                     <div class="col-md-7">
-                                        <button class="btn btn-outline-primary btn-sm"  type="button" (click)="addMore()"> Add Another
+                                        <button class="btn btn-outline-primary btn-sm" type="button"
+                                            (click)="addMore()"> Add Another
                                             Delivery Date</button>
                                     </div>
                                 </div>
@@ -2270,7 +2335,8 @@
 
 
 
-                                    <div class="form-group row" *ngIf="loggedInDepartmentName!='Yarn Export' && loggedInDepartmentName != 'Yarn Export Bangladesh'
+                                    <div class="form-group row"
+                                        *ngIf="loggedInDepartmentName!='Yarn Export' && loggedInDepartmentName != 'Yarn Export Bangladesh'
                                     && loggedInDepartmentName != 'Yarn Import' && loggedInDepartmentName != 'Comber noil' && loggedInDepartmentName != 'Synthetic Fibers'">
                                         <label for="code" class="col-md-3 col-form-label control-label">FabCot
                                             Commission:</label>
@@ -2507,7 +2573,8 @@
 
 
 
-                                        <div class="form-group row" *ngIf="loggedInDepartmentName != 'Yarn Import' && loggedInDepartmentName != 'Synthetic Fibers'">
+                                        <div class="form-group row"
+                                            *ngIf="loggedInDepartmentName != 'Yarn Import' && loggedInDepartmentName != 'Synthetic Fibers'">
                                             <label for="code" class="col-md-3 col-form-label control-label">FabCot
                                                 Commission:</label>
 
@@ -2559,51 +2626,52 @@
                                         </div>
 
 
-                                        <div class="form-group row"
-                                        *ngIf="loggedInDepartmentName == 'Comber noil'">
-                                        <label for="code" class="col-md-3 col-form-label control-label">Commission Buyer
-                                            Side:</label>
+                                        <div class="form-group row" *ngIf="loggedInDepartmentName == 'Comber noil'">
+                                            <label for="code" class="col-md-3 col-form-label control-label">Commission
+                                                Buyer
+                                                Side:</label>
 
-                                        <div class="col-md-7">
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <div class="input-group">
-                                                        <input type="number" min="0" placeholder="Comm%"
-                                                            #buyersideCommision="ngModel" class="form-control"
-                                                            [(ngModel)]="data.buyersideCommision"
-                                                            name="buyersideCommision">
-                                                        <div class="input-group-append">
-                                                            <span class="input-group-text" id="basic-addon2">per</span>
+                                            <div class="col-md-7">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <div class="input-group">
+                                                            <input type="number" min="0" placeholder="Comm%"
+                                                                #buyersideCommision="ngModel" class="form-control"
+                                                                [(ngModel)]="data.buyersideCommision"
+                                                                name="buyersideCommision">
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text"
+                                                                    id="basic-addon2">per</span>
+                                                            </div>
                                                         </div>
                                                     </div>
+
+                                                    <div class="col-md-4 mrg-tsm">
+                                                        <ng-select name="buyersideCommisionUOMId "
+                                                            #buyersideCommisionUOMId="ngModel"
+                                                            [(ngModel)]="data.buyersideCommisionUOMId"
+                                                            placeholder="-- Unit UOM --">
+                                                            <ng-option *ngFor="let i of uomList" [value]="i.id">{{
+                                                                i.name }}
+                                                            </ng-option>
+                                                        </ng-select>
+                                                    </div>
+
+
+                                                    <div class="col-md-4 mrg-tsm">
+
+                                                        <input type="text" placeholder="Additional Info"
+                                                            class="form-control"
+                                                            [(ngModel)]="data.buyerSideCommAdditionalInfo"
+                                                            name="buyerSideCommAdditionalInfo"
+                                                            #buyerSideCommAdditionalInfo="ngModel">
+                                                    </div>
                                                 </div>
-
-                                                <div class="col-md-4 mrg-tsm">
-                                                    <ng-select name="buyersideCommisionUOMId "
-                                                        #buyersideCommisionUOMId="ngModel"
-                                                        [(ngModel)]="data.buyersideCommisionUOMId"
-                                                        placeholder="-- Unit UOM --">
-                                                        <ng-option *ngFor="let i of uomList" [value]="i.id">{{ i.name }}
-                                                        </ng-option>
-                                                    </ng-select>
-                                                </div>
-
-
-                                                <div class="col-md-4 mrg-tsm"
-                                                   >
-
-                                                    <input type="text" placeholder="Additional Info"
-                                                        class="form-control"
-                                                        [(ngModel)]="data.buyerSideCommAdditionalInfo"
-                                                        name="buyerSideCommAdditionalInfo"
-                                                        #buyerSideCommAdditionalInfo="ngModel">
-                                                </div>
+                                                <small id="passwordHelpBlock" class="form-text text-lightgrey">
+                                                    Kickback in %age, If UOM not selected
+                                                </small>
                                             </div>
-                                            <small id="passwordHelpBlock" class="form-text text-lightgrey">
-                                                Kickback in %age, If UOM not selected
-                                            </small>
                                         </div>
-                                    </div>
 
 
                                         <div class="form-group row">
