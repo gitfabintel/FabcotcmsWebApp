@@ -953,6 +953,7 @@ this.spinner.hide();
       Buyer: row.buyerName ,
       Seller: row.sellerName,
       InvoiceNumber:row.invoiceNo,
+      InvoiceDate:row.invoiceDate,
       Rate: row.rate +row.uomName,
       CommPer: row.fabcotCommission +' '+ row.commissionUomName  ,
       Quantity: row.quantity,

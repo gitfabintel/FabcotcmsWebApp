@@ -380,6 +380,12 @@
   
                 </ng-template>
               </ngx-datatable-column>
+              <ngx-datatable-column name="BillNo" >
+                <ng-template let-row="row" let-expanded="expanded" ngx-datatable-cell-template>
+                  {{row.billNumber}}
+
+                </ng-template>
+              </ngx-datatable-column>
               <ngx-datatable-column name="Status" >
                 <ng-template let-row="row" let-expanded="expanded" ngx-datatable-cell-template>
                   <span class="badge badge-primary">{{row.status}}</span>
